@@ -897,7 +897,7 @@ export default function PatternForge() {
           {/* Help */}
           <div style={{ ...S.panelSection, borderBottom: "none" }}>
             <div style={S.panelTitle}>Shortcuts</div>
-            <div style={{ fontSize: 9, color: "#444", lineHeight: 1.8 }}>
+            <div style={{ fontSize: 9, color: "#fff", lineHeight: 1.8 }}>
               V — Select &amp; move<br />
               P — Place point<br />
               L — Draw line<br />
