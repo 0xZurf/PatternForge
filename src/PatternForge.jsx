@@ -134,7 +134,7 @@ const S = {
     width: 34, height: 34, display: "flex", alignItems: "center", justifyContent: "center",
     borderRadius: 6, border: "none", cursor: "pointer",
     background: active ? "#e8a04520" : "transparent",
-    color: active ? "#e8a045" : "#888",
+    color: active ? "#e8a045" : "#fff",
     transition: "all 0.15s",
   }),
   divider: { width: 24, height: 1, background: "#2a2a2e", margin: "6px 0" },
@@ -144,26 +144,26 @@ const S = {
     flexShrink: 0, overflowY: "auto", display: "flex", flexDirection: "column",
   },
   panelSection: { padding: "12px 14px", borderBottom: "1px solid #222226" },
-  panelTitle: { fontSize: 9, fontWeight: 600, letterSpacing: 1.5, textTransform: "uppercase", color: "#666", marginBottom: 8 },
+  panelTitle: { fontSize: 9, fontWeight: 600, letterSpacing: 1.5, textTransform: "uppercase", color: "#fff", marginBottom: 8 },
   row: { display: "flex", alignItems: "center", gap: 6, marginBottom: 6 },
-  label: { width: 18, fontSize: 10, color: "#666", flexShrink: 0 },
+  label: { width: 18, fontSize: 10, color: "#fff", flexShrink: 0 },
   input: {
     flex: 1, height: 26, background: "#111114", border: "1px solid #2a2a2e", borderRadius: 4,
     color: "#e0ddd8", padding: "0 6px", fontSize: 11, fontFamily: "inherit", outline: "none",
   },
   statusBar: {
     height: 24, display: "flex", alignItems: "center", padding: "0 12px", gap: 16,
-    background: "#151518", borderTop: "1px solid #2a2a2e", fontSize: 10, color: "#555",
+    background: "#151518", borderTop: "1px solid #2a2a2e", fontSize: 10, color: "#fff",
     flexShrink: 0,
   },
   chip: (active) => ({
     padding: "3px 8px", borderRadius: 4, fontSize: 10, fontWeight: 600, cursor: "pointer",
-    background: active ? "#e8a04520" : "#222226", color: active ? "#e8a045" : "#888",
+    background: active ? "#e8a04520" : "#222226", color: active ? "#e8a045" : "#fff",
     border: active ? "1px solid #e8a04540" : "1px solid #2a2a2e",
   }),
   iconBtn: {
     width: 28, height: 28, display: "flex", alignItems: "center", justifyContent: "center",
-    background: "transparent", border: "none", color: "#777", cursor: "pointer", borderRadius: 4,
+    background: "transparent", border: "none", color: "#fff", cursor: "pointer", borderRadius: 4,
   },
   modalOverlay: {
     position: "absolute", inset: 0, background: "rgba(0,0,0,0.6)", display: "flex",
@@ -178,7 +178,7 @@ const S = {
     height: 30, padding: "0 14px", borderRadius: 5, border: "none", cursor: "pointer",
     fontSize: 11, fontWeight: 600, fontFamily: "inherit",
     background: primary ? "#e8a045" : "#2a2a2e",
-    color: primary ? "#111" : "#aaa",
+    color: primary ? "#111" : "#fff",
   }),
   pointList: {
     maxHeight: 200, overflowY: "auto", display: "flex", flexDirection: "column", gap: 2,
@@ -187,7 +187,7 @@ const S = {
     display: "flex", alignItems: "center", justifyContent: "space-between",
     padding: "4px 6px", borderRadius: 4, fontSize: 10, cursor: "pointer",
     background: selected ? "#e8a04512" : "transparent",
-    color: selected ? "#e8a045" : "#999",
+    color: selected ? "#e8a045" : "#fff",
   }),
 };
 
@@ -742,7 +742,7 @@ export default function PatternForge() {
           <span style={S.chip(gridSnap)} onClick={() => setGridSnap(g => !g)}>{icons.grid} <span style={{ marginLeft: 4 }}>SNAP</span></span>
           <div style={{ width: 1, height: 18, background: "#2a2a2e", margin: "0 4px" }} />
           <button style={S.iconBtn} onClick={() => setZoom(z => Math.min(MAX_ZOOM, z * 1.2))}>{icons.zoomIn}</button>
-          <span style={{ fontSize: 10, color: "#666", width: 40, textAlign: "center" }}>{Math.round(zoom * 100)}%</span>
+          <span style={{ fontSize: 10, color: "#fff", width: 40, textAlign: "center" }}>{Math.round(zoom * 100)}%</span>
           <button style={S.iconBtn} onClick={() => setZoom(z => Math.max(MIN_ZOOM, z * 0.8))}>{icons.zoomOut}</button>
           <button style={S.iconBtn} onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }} title="Reset view">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.2" /><circle cx="7" cy="7" r="1.5" fill="currentColor" /></svg>
@@ -783,7 +783,7 @@ export default function PatternForge() {
             <div style={S.modalOverlay} onClick={() => setShowMeasureModal(false)}>
               <div style={S.modal} onClick={e => e.stopPropagation()}>
                 <div style={S.modalTitle}>Place Point by Measurement</div>
-                <div style={{ fontSize: 10, color: "#888" }}>From: {points[measureFrom]?.label}</div>
+                <div style={{ fontSize: 10, color: "#fff" }}>From: {points[measureFrom]?.label}</div>
                 <div style={S.row}>
                   <span style={S.label}>D</span>
                   <input
@@ -840,12 +840,12 @@ export default function PatternForge() {
                     onChange={e => updatePointCoord("y", e.target.value)}
                   />
                 </div>
-                <div style={{ fontSize: 10, color: "#555", marginTop: 4 }}>
+                <div style={{ fontSize: 10, color: "#fff", marginTop: 4 }}>
                   {unit === "in" ? "inches" : "centimeters"}
                 </div>
               </>
             ) : (
-              <div style={{ fontSize: 10, color: "#444" }}>Select a point to see its properties</div>
+              <div style={{ fontSize: 10, color: "#fff" }}>Select a point to see its properties</div>
             )}
           </div>
 
